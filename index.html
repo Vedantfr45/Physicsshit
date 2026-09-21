@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orbital Lab — Learn Gravity</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="logo">ORBITAL LAB // 01</div><div class="tag">Learn physics by experimenting</div></header>
+<main>
+  <section class="hero">
+    <h1>Why don't planets<br><span>fall into the Sun?</span></h1>
+    <p>Explore orbital motion by changing the planet's starting speed. Find out how gravity can constantly pull an object inward while its sideways motion keeps it moving around.</p>
+  </section>
+
+  <section class="grid">
+    <div class="card sim">
+      <canvas id="space"></canvas>
+      <div class="overlay"><div class="pill">LIVE GRAVITY SIMULATION</div><div class="pill" id="mode">Stable orbit</div></div>
+    </div>
+
+    <aside class="card controls">
+      <h2>Control the experiment</h2>
+      <div class="hint">Change one variable at a time. Watch the orbit change, then predict what will happen before moving the slider.</div>
+
+      <label>Starting speed <b id="speedVal">7.0 km/s</b></label>
+      <input id="speed" type="range" min="2" max="12" step=".1" value="7">
+
+      <label>Gravity <b id="gravVal">1.00×</b></label>
+      <input id="gravity" type="range" min=".4" max="1.8" step=".01" value="1">
+
+      <label>Launch distance <b id="distVal">1.00 AU</b></label>
+      <input id="distance" type="range" min=".65" max="1.4" step=".01" value="1">
+
+      <button id="reset">↻ Reset experiment</button>
+
+      <div class="stats">
+        <div class="stat"><small>Speed</small><strong id="s1">7.0 km/s</strong></div>
+        <div class="stat"><small>Gravity</small><strong id="s2">1.00×</strong></div>
+        <div class="stat"><small>Distance</small><strong id="s3">1.00 AU</strong></div>
+        <div class="stat"><small>Orbital idea</small><strong id="s4">Balanced</strong></div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="card lesson">
+    <h2>The big idea</h2>
+    <p>Gravity is constantly accelerating the planet toward the star. But the planet also has sideways velocity. Instead of moving in a straight line forever, its path continually bends toward the star.</p>
+    <div class="formula">F = GMm / r²</div>
+    <p>Notice the <b>r²</b>. Double the distance and the gravitational force becomes four times weaker. That's one reason distance matters so much in orbital motion.</p>
+    <div class="challenge"><b>🧠 Try this:</b> Set gravity to 1× and slowly increase the starting speed. Can you find the point where the orbit changes from falling inward to escaping outward?</div>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
